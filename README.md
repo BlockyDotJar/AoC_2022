@@ -1,6 +1,4 @@
-## [Advent of Code](https://adventofcode.com/) 2022 Solutions in Java
-
-<hr>
+# [Advent of Code](https://adventofcode.com/) 2022 Solutions in Java
 
 ### What the fuq is this?
 
