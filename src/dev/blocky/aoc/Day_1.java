@@ -14,7 +14,7 @@ public class Day_1
 
     public static void main(String[] args) throws IOException
     {
-        List<Integer> results = new ArrayList<>();
+        final List<Integer> results = new ArrayList<>();
         int current = 0;
 
         final File file = new File("src/rsc/Day_1.txt");
