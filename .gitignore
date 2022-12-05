@@ -21,4 +21,6 @@
 
 src/rsc/
 src/dev/blocky/aoc/annotations/
+src/dev/blocky/aoc/annotations/NeedHelp.java
+src/dev/blocky/aoc/annotations/Unresolved.java.java
 /out
