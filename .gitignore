@@ -20,4 +20,5 @@
 *.rar
 
 src/rsc/
+src/dev/blocky/aoc/annotations
 /out

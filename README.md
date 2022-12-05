@@ -19,9 +19,10 @@ Like i said, this is not the *best* or maybe not even a *good* solution.
 
 **Java Version used:** 17.0.5
 
-| Day - Challange name         |     |
-|------------------------------|-----|
-| 01 - Calorie Counting        | ✅   |
-| 02 - Rock Paper Scissors     | ✅   |
-| 03 - Rucksack Reorganization | ✅   |
-| 04 - Camp Cleanup            | ✅   |
+| Day - Challange name         | Part 1 | Part 2 |
+|------------------------------|--------|--------|
+| 01 - Calorie Counting        | ✅      | ✅      |
+| 02 - Rock Paper Scissors     | ✅      | ✅      |
+| 03 - Rucksack Reorganization | ✅      | ✅      |
+| 04 - Camp Cleanup            | ✅      | ✅      |
+| 05 - Supply Stacks           | ❌      | ❌      |
