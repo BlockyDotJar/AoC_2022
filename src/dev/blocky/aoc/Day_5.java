@@ -1,8 +1,5 @@
 package dev.blocky.aoc;
 
-import dev.blocky.aoc.annotations.NeedHelp;
-import dev.blocky.aoc.annotations.Unresolved;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,8 +9,9 @@ import java.util.List;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-@NeedHelp
-@Unresolved
+/**
+ * I tried  it...
+ */
 public class Day_5
 {
 
