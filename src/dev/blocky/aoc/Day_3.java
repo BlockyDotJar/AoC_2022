@@ -88,7 +88,6 @@ public class Day_3
             }
         }
 
-
         // Part 1 of the Challenge.
         System.out.println(count);
 

@@ -26,3 +26,4 @@ Like i said, this is not the *best* or maybe not even a *good* solution.
 | 03 - Rucksack Reorganization | ✅      | ✅      |
 | 04 - Camp Cleanup            | ✅      | ✅      |
 | 05 - Supply Stacks           | ❌      | ❌      |
+| 06 - Tuning Trouble          | ✅      | ✅      |
