@@ -19,7 +19,7 @@ public class Day_9
 
         final File file = new File("src/rsc/Day_9.txt");
 
-        try (final Stream<String> fileContent = Files.lines(file.toPath(), UTF_8))
+        try (Stream<String> fileContent = Files.lines(file.toPath(), UTF_8))
         {
             final HashSet<Position> ch1 = new HashSet<>();
             final Position po1 = new Position(0, 0), tail = new Position(0, 0);

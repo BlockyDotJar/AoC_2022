@@ -21,8 +21,8 @@ public class Day_3
 
         for (String line : fileContent)
         {
-            char[] part1 = line.substring(0, line.length() / 2).toCharArray();
-            char[] part2 = line.substring(line.length() / 2).toCharArray();
+            final char[] part1 = line.substring(0, line.length() / 2).toCharArray();
+            final char[] part2 = line.substring(line.length() / 2).toCharArray();
 
             Arrays.sort(part1);
             Arrays.sort(part2);
@@ -52,11 +52,11 @@ public class Day_3
 
         for (int i = 0; i < fileContent.size(); i += 3)
         {
-            List<String> l = fileContent.subList(i, i + 3);
+            final List<String> l = fileContent.subList(i, i + 3);
 
-            char[] part1 = l.get(0).toCharArray();
-            char[] part2 = l.get(1).toCharArray();
-            char[] part3 = l.get(2).toCharArray();
+            final char[] part1 = l.get(0).toCharArray();
+            final char[] part2 = l.get(1).toCharArray();
+            final char[] part3 = l.get(2).toCharArray();
 
             Arrays.sort(part1);
             Arrays.sort(part2);

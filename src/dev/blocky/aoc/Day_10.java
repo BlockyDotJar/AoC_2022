@@ -30,45 +30,45 @@ public class Day_10
         final List<Integer> ss = new ArrayList<>();
         final List<Integer> mp = new ArrayList<>(Arrays.asList(20, 60, 100, 140, 180, 220));
 
-        int cycle = 1;
-        int register = 1;
+        int c = 1;
+        int r = 1;
 
-        out.add(register);
+        out.add(r);
 
         for (String line : lines)
         {
             if (line.equals("noop"))
             {
-                cycle += 1;
+                c += 1;
 
-                out.add(register);
+                out.add(r);
 
-                if (mp.contains(cycle))
+                if (mp.contains(c))
                 {
-                    ss.add(cycle * register);
+                    ss.add(c * r);
                 }
             }
             else if (line.startsWith("addx"))
             {
-                int value = Integer.parseInt(line.substring(5));
+                final int val = Integer.parseInt(line.substring(5));
 
-                cycle += 1;
+                c += 1;
 
-                out.add(register);
+                out.add(r);
 
-                if (mp.contains(cycle))
+                if (mp.contains(c))
                 {
-                    ss.add(cycle * register);
+                    ss.add(c * r);
                 }
 
-                cycle += 1;
-                register += value;
+                c += 1;
+                r += val;
 
-                out.add(register);
+                out.add(r);
 
-                if (mp.contains(cycle))
+                if (mp.contains(c))
                 {
-                    ss.add(cycle * register);
+                    ss.add(c * r);
                 }
             }
         }
@@ -81,8 +81,9 @@ public class Day_10
         {
             for (int x = 0; x <= 39; x++)
             {
-                int sprite = out.get(x + i * 40);
-                if (x == sprite || x == sprite - 1 || x == sprite + 1)
+                final int s = out.get(x + i * 40);
+
+                if (x == s || x == s - 1 || x == s + 1)
                 {
                     System.out.print("#");
                 }

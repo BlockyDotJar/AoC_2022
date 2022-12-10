@@ -108,8 +108,8 @@ public class Day_5
                     final String moveStr = lFrom.get(0);
 
                     final List<String> lTo = col.get(toI - 1);
-                    lTo.add(0, moveStr);
 
+                    lTo.add(0, moveStr);
                     lFrom.remove(moveStr);
                 }
             }
@@ -206,7 +206,6 @@ public class Day_5
                 final List<String> lTo = col.get(toI - 1);
 
                 lTo.addAll(0, new ArrayList<>(lMove));
-
                 lMove.forEach(lFrom::remove);
             }
         }

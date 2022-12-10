@@ -97,10 +97,10 @@ public class Day_7
 
     static class Dir
     {
+        final List<Dir> subDir = new ArrayList<>();
+        final String name;
         Dir parent;
-        String name;
         int size;
-        List<Dir> subDir = new ArrayList<>();
 
         public Dir(String name)
         {
