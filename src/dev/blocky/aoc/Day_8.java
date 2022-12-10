@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -18,77 +17,74 @@ public class Day_8
         int endCount;
 
         final File file = new File("src/rsc/Day_8.txt");
+        final List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
 
-        try (final Stream<String> fileContent = Files.lines(file.toPath(), UTF_8))
+        final int[][] trees = new int[fileContent.size()][];
+
+        Arrays.setAll(trees, line -> new int[fileContent.get(0).trim().length()]);
+
+        for (int i = 0; i < fileContent.size(); i++)
         {
-            final List<String> lines = fileContent.toList();
-            final int[][] trees = new int[lines.size()][];
+            final String line = fileContent.get(i);
 
-            Arrays.setAll(trees, line -> new int[lines.get(0).trim().length()]);
-
-            for (int i = 0; i < lines.size(); i++)
+            for (int x = 0; x < line.trim().length(); x++)
             {
-                final String line = lines.get(i);
-
-                for (int x = 0; x < line.trim().length(); x++)
-                {
-                    trees[i][x] = Character.getNumericValue(line.charAt(x));
-                }
+                trees[i][x] = Character.getNumericValue(line.charAt(x));
             }
+        }
 
-            int visible = 0;
-            int ts = 1;
+        int visible = 0;
+        int ts = 1;
 
-            for (int i = 0; i < trees.length; i++)
+        for (int i = 0; i < trees.length; i++)
+        {
+            for (int x = 0; x < trees[i].length; x++)
             {
-                for (int x = 0; x < trees[i].length; x++)
+                for (Position pos : Position.values())
                 {
-                    for (Position pos : Position.values())
+                    final int current = trees[i][x];
+
+                    boolean isVisible = true;
+
+                    for (int z = x, y = i;
+                         z > 0 && z < trees[i].length - 1 && y > 0 && y < trees.length - 1;
+                         z += pos.x, y += pos.y)
                     {
-                        final int current = trees[i][x];
+                        final int tree = trees[y + pos.y][z + pos.x];
 
-                        boolean isVisible = true;
-
-                        for (int z = x, y = i;
-                             z > 0 && z < trees[i].length - 1 && y > 0 && y < trees.length - 1;
-                             z += pos.x, y += pos.y)
+                        if (current <= tree)
                         {
-                            final int tree = trees[y + pos.y][z + pos.x];
-
-                            if (current <= tree)
-                            {
-                                isVisible = false;
-                                break;
-                            }
-                        }
-
-                        if (isVisible)
-                        {
-                            visible++;
+                            isVisible = false;
                             break;
                         }
                     }
 
-                    int score = 1;
-
-                    for (Position pos : Position.values())
+                    if (isVisible)
                     {
-                        score *= score(pos, trees, x, i);
+                        visible++;
+                        break;
                     }
-
-                    ts = Math.max(ts, score);
                 }
+
+                int score = 1;
+
+                for (Position pos : Position.values())
+                {
+                    score *= score(pos, trees, x, i);
+                }
+
+                ts = Math.max(ts, score);
             }
-
-            count = visible;
-            endCount = ts;
-
-            // Part 1 of the Challenge.
-            System.out.println(count);
-
-            // Part 2 of the Challenge.
-            System.out.println(endCount);
         }
+
+        count = visible;
+        endCount = ts;
+
+        // Part 1 of the Challenge.
+        System.out.println(count);
+
+        // Part 2 of the Challenge.
+        System.out.println(endCount);
     }
 
     private static int score(Position pos, int[][] trees, int x, int y)

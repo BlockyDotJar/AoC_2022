@@ -28,7 +28,7 @@ public class Day_9
 
             final HashSet<Position> ch2 = new HashSet<>();
             final Position po2 = new Position(0, 0);
-            final List<Position> tails = new ArrayList<>
+            final List<Position> positions = new ArrayList<>
                     (
                             Arrays.asList
                                     (
@@ -66,14 +66,14 @@ public class Day_9
                             case "U" -> po2.y = po2.y + 1;
                             }
 
-                            move(po2, tails.get(0));
+                            move(po2, positions.get(0));
 
-                            for (int x = 1; x < tails.size(); x++)
+                            for (int x = 1; x < positions.size(); x++)
                             {
-                                move(tails.get(x - 1), tails.get(x));
+                                move(positions.get(x - 1), positions.get(x));
                             }
 
-                            ch2.add(new Position(tails.get(tails.size() - 1).x, tails.get(tails.size() - 1).y));
+                            ch2.add(new Position(positions.get(positions.size() - 1).x, positions.get(positions.size() - 1).y));
                         }
                     });
 

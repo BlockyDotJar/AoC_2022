@@ -30,3 +30,4 @@ Like I said, this is not the *best* or maybe not even a *good* solution.
 | 07 - No Space Left On Device | ✅      | ✅      |
 | 08 - Treetop Tree House      | ✅      | ✅      |
 | 09 - Rope Bridge             | ✅      | ✅      |
+| 10 - Cathode-Ray Tube        | ✅      | ✅      |
