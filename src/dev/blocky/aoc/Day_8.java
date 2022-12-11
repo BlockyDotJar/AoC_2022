@@ -87,7 +87,7 @@ public class Day_8
         System.out.println(endCount);
     }
 
-    private static int score(Position pos, int[][] trees, int x, int y)
+    static int score(Position pos, int[][] trees, int x, int y)
     {
         final int current = trees[y][x];
 

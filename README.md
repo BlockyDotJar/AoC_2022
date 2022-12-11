@@ -2,15 +2,15 @@
 
 ### What the fuq is this?
 
-This repository contains solutions to [Eric Wastls](https://twitter.com/ericwastl) Advent of Code 2022. 
+This repository contains solutions to [Eric Wastls](https://twitter.com/ericwastl) Advent of Code 2022.
 <br>**Thank you, Eric!**
 
-While the code aims to be as fast as possible (the goal is to complete all puzzles of 2022 in under one second), 
+While the code aims to be as fast as possible (the goal is to complete all puzzles of 2022 in under one second),
 I often lack the time and/or knowledge to optimize it properly.
 
 <hr>
 
-**Note:** This code isn't a masterpiece, and I am not a Java Pro, so don't expect that this is the best Java code, 
+**Note:** This code isn't a masterpiece, and I am not a Java Pro, so don't expect that this is the best Java code,
 you have ever seen and there probably won't be all 25 day solutions.
 
 Like I said, this is not the *best* or maybe not even a *good* solution.
@@ -31,3 +31,4 @@ Like I said, this is not the *best* or maybe not even a *good* solution.
 | 08 - Treetop Tree House      | ✅      | ✅      |
 | 09 - Rope Bridge             | ✅      | ✅      |
 | 10 - Cathode-Ray Tube        | ✅      | ✅      |
+| 11 - Monkey in the Middle    | ✅      | ✅      |

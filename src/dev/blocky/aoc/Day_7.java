@@ -102,7 +102,7 @@ public class Day_7
         Dir parent;
         int size;
 
-        public Dir(String name)
+        Dir(String name)
         {
             this.name = name;
         }

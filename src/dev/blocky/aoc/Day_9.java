@@ -88,7 +88,7 @@ public class Day_9
         }
     }
 
-    private static void move(Position h, Position t)
+    static void move(Position h, Position t)
     {
         if (Math.abs(h.x - t.x) == 2 && Math.abs(h.y - t.y) == 1)
         {
@@ -109,10 +109,10 @@ public class Day_9
 
     static class Position
     {
-        private int x;
-        private int y;
+        int x;
+        int y;
 
-        public Position(int x, int y)
+        Position(int x, int y)
         {
             this.x = x;
             this.y = y;
