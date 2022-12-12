@@ -32,3 +32,4 @@ Like I said, this is not the *best* or maybe not even a *good* solution.
 | 09 - Rope Bridge             | ✅      | ✅      |
 | 10 - Cathode-Ray Tube        | ✅      | ✅      |
 | 11 - Monkey in the Middle    | ✅      | ✅      |
+| 12 - Hill Climbing Algorithm | ❌      | ❌      |

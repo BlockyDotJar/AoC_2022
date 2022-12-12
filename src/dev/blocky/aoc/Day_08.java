@@ -8,7 +8,7 @@ import java.util.List;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class Day_8
+public class Day_08
 {
 
     public static void main(String[] args) throws IOException
@@ -16,7 +16,7 @@ public class Day_8
         int count;
         int endCount;
 
-        final File file = new File("src/rsc/Day_8.txt");
+        final File file = new File("src/rsc/Day_08.txt");
         final List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
 
         final int[][] trees = new int[fileContent.size()][];

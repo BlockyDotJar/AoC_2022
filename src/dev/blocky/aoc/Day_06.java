@@ -6,12 +6,12 @@ import java.nio.file.Files;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class Day_6
+public class Day_06
 {
 
     public static void main(String[] args) throws IOException
     {
-        final File file = new File("src/rsc/Day_6.txt");
+        final File file = new File("src/rsc/Day_06.txt");
         final String fileContent = Files.readString(file.toPath(), UTF_8);
 
         final char[] chars = fileContent.toCharArray();

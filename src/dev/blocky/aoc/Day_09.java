@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class Day_9
+public class Day_09
 {
 
     public static void main(String[] args) throws IOException
@@ -17,7 +17,7 @@ public class Day_9
         int count;
         int endCount;
 
-        final File file = new File("src/rsc/Day_9.txt");
+        final File file = new File("src/rsc/Day_09.txt");
 
         try (Stream<String> fileContent = Files.lines(file.toPath(), UTF_8))
         {

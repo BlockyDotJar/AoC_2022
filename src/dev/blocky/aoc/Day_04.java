@@ -7,7 +7,7 @@ import java.util.List;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class Day_4
+public class Day_04
 {
 
     public static void main(String[] args) throws IOException
@@ -15,7 +15,7 @@ public class Day_4
         int count = 0;
         int endCount = 0;
 
-        final File file = new File("src/rsc/Day_4.txt");
+        final File file = new File("src/rsc/Day_04.txt");
         final List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
 
         for (String line : fileContent)

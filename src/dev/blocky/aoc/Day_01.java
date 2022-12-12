@@ -9,13 +9,13 @@ import java.util.List;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class Day_1
+public class Day_01
 {
     private static final List<Integer> results = new ArrayList<>();
 
     public static void main(String[] args) throws IOException
     {
-        final File file = new File("src/rsc/Day_1.txt");
+        final File file = new File("src/rsc/Day_01.txt");
         final List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
 
         // Part 1 of the Challenge.

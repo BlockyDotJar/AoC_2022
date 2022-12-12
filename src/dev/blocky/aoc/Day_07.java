@@ -10,7 +10,7 @@ import java.util.Optional;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class Day_7
+public class Day_07
 {
     private static final List<Dir> dirs = new ArrayList<>();
     private static final Dir root = new Dir("/");
@@ -18,7 +18,7 @@ public class Day_7
 
     public static void main(String[] args) throws IOException
     {
-        final File file = new File("src/rsc/Day_7.txt");
+        final File file = new File("src/rsc/Day_07.txt");
         final String fileContent = Files.readString(file.toPath(), UTF_8);
 
         currentDir = root;
