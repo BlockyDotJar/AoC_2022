@@ -36,3 +36,5 @@ Like I said, this is not the *best* or maybe not even a *good* solution.
 | 13 - Distress Signal         | ❌      | ❌      |
 | 14 - Regolith Reservoir      | ❌      | ❌      | Will be done when i am having enough time
 | 15 - Beacon Exclusion Zone   | ❌      | ❌      | See note of day 14
+| 16 - Proboscidea Volcanium   | ❌      | ❌      | See note of day 15
+| 17 - Pyroclastic Flow        | ❌      | ❌      | See note of day 16
