@@ -1,3 +1,18 @@
+/**
+ * Copyright 2022-2023 Dominic R. (aka. BlockyDotJar)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package dev.blocky.aoc;
 
 import java.io.File;
@@ -15,8 +30,8 @@ public class Day_01
 
     public static void main(String[] args) throws IOException
     {
-        final File file = new File("src/rsc/Day_01.txt");
-        final List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
+        File file = new File("src/rsc/Day_01.txt");
+        List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
 
         // Part 1 of the Challenge.
         System.out.println(part1(fileContent));
@@ -46,7 +61,7 @@ public class Day_01
 
     private static int part2()
     {
-        final List<Integer> top3 = new ArrayList<>(results.subList(results.size() - 3, results.size()));
+        List<Integer> top3 = new ArrayList<>(results.subList(results.size() - 3, results.size()));
         return top3.stream().mapToInt(Integer::intValue).sum();
     }
 }

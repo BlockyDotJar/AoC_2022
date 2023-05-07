@@ -1,3 +1,18 @@
+/**
+ * Copyright 2022-2023 Dominic R. (aka. BlockyDotJar)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package dev.blocky.aoc;
 
 import java.io.File;
@@ -11,11 +26,10 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Day_11
 {
-
     public static void main(String[] args) throws IOException
     {
-        final File file = new File("src/rsc/Day_11.txt");
-        final List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
+        File file = new File("src/rsc/Day_11.txt");
+        List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
 
         // Part 1 of the Challenge.
         System.out.println(part1(fileContent));
@@ -27,8 +41,8 @@ public class Day_11
 
     private static long part1(List<String> lines)
     {
-        final List<Monkey> monkeyL = new ArrayList<>();
-        final List<Long> itemL = new ArrayList<>();
+        List<Monkey> monkeyL = new ArrayList<>();
+        List<Long> itemL = new ArrayList<>();
 
         int[] i = new int[5];
 
@@ -41,15 +55,15 @@ public class Day_11
                 continue;
             }
 
-            final String sub = line.substring(0, 4);
-            final String ifB = line.substring(4, 8);
+            String sub = line.substring(0, 4);
+            String ifB = line.substring(4, 8);
 
-            final String[] split = line.split(": ");
+            String[] split = line.split(": ");
 
-            final String it = split[1];
+            String it = split[1];
 
-            final String[] items = it.split(", ");
-            final String[] items2 = it.split(" ");
+            String[] items = it.split(", ");
+            String[] items2 = it.split(" ");
 
             switch (sub)
             {
@@ -57,7 +71,7 @@ public class Day_11
             {
                 for (String item : items)
                 {
-                    final long l = Long.parseLong(item);
+                    long l = Long.parseLong(item);
 
                     itemL.add(l);
                 }
@@ -77,7 +91,7 @@ public class Day_11
                 {
                     i[4] = Integer.parseInt(items2[3]);
 
-                    final Monkey monkey = new Monkey(itemL, i);
+                    Monkey monkey = new Monkey(itemL, i);
                     monkeyL.add(monkey);
 
                     op *= i[2];
@@ -99,7 +113,7 @@ public class Day_11
             }
         }
 
-        final List<Long> countL = new ArrayList<>();
+        List<Long> countL = new ArrayList<>();
 
         for (Monkey monkey : monkeyL)
         {
@@ -108,16 +122,16 @@ public class Day_11
 
         Collections.sort(countL);
 
-        final long eC1 = countL.get(countL.size() - 2);
-        final long eC2 = countL.get(countL.size() - 1);
+        long eC1 = countL.get(countL.size() - 2);
+        long eC2 = countL.get(countL.size() - 1);
 
         return eC1 * eC2;
     }
 
     private static long part2(List<String> lines)
     {
-        final List<Monkey> monkeyL = new ArrayList<>();
-        final List<Long> itemL = new ArrayList<>();
+        List<Monkey> monkeyL = new ArrayList<>();
+        List<Long> itemL = new ArrayList<>();
 
         int[] i = new int[5];
 
@@ -130,15 +144,15 @@ public class Day_11
                 continue;
             }
 
-            final String sub = line.substring(0, 4);
-            final String ifB = line.substring(4, 8);
+            String sub = line.substring(0, 4);
+            String ifB = line.substring(4, 8);
 
-            final String[] split = line.split(": ");
+            String[] split = line.split(": ");
 
-            final String it = split[1];
+            String it = split[1];
 
-            final String[] items = it.split(", ");
-            final String[] items2 = it.split(" ");
+            String[] items = it.split(", ");
+            String[] items2 = it.split(" ");
 
             switch (sub)
             {
@@ -146,7 +160,7 @@ public class Day_11
             {
                 for (String item : items)
                 {
-                    final long l = Long.parseLong(item);
+                    long l = Long.parseLong(item);
 
                     itemL.add(l);
                 }
@@ -166,7 +180,7 @@ public class Day_11
                 {
                     i[4] = Integer.parseInt(items2[3]);
 
-                    final Monkey monkey = new Monkey(itemL, i);
+                    Monkey monkey = new Monkey(itemL, i);
                     monkeyL.add(monkey);
 
                     op *= i[2];
@@ -188,7 +202,7 @@ public class Day_11
             }
         }
 
-        final List<Long> countL = new ArrayList<>();
+        List<Long> countL = new ArrayList<>();
 
         for (Monkey monkey : monkeyL)
         {
@@ -197,16 +211,16 @@ public class Day_11
 
         Collections.sort(countL);
 
-        final long eC1 = countL.get(countL.size() - 2);
-        final long eC2 = countL.get(countL.size() - 1);
+        long eC1 = countL.get(countL.size() - 2);
+        long eC2 = countL.get(countL.size() - 1);
 
         return eC1 * eC2;
     }
 
     static class Monkey
     {
-        final List<Long> itemL;
-        final int[] i;
+        List<Long> itemL;
+        int[] i;
 
         long count;
 

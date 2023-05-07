@@ -1,3 +1,18 @@
+/**
+ * Copyright 2022-2023 Dominic R. (aka. BlockyDotJar)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package dev.blocky.aoc;
 
 import java.io.File;
@@ -18,13 +33,13 @@ public class Day_07
 
     public static void main(String[] args) throws IOException
     {
-        final File file = new File("src/rsc/Day_07.txt");
-        final String fileContent = Files.readString(file.toPath(), UTF_8);
+        File file = new File("src/rsc/Day_07.txt");
+        String fileContent = Files.readString(file.toPath(), UTF_8);
 
         currentDir = root;
         dirs.add(root);
 
-        final String[] cmds = fileContent.split("\r\n");
+        String[] cmds = fileContent.split("\r\n");
 
         for (String cmd : cmds)
         {
@@ -38,34 +53,32 @@ public class Day_07
             }
             else if (cmd.startsWith("$ cd"))
             {
-                final String pos = cmd.split(" ")[2];
-                final Optional<Dir> subDir = currentDir.subDir.stream().filter(n -> n.name.equals(pos)).findFirst();
-
+                String pos = cmd.split(" ")[2];
+                Optional<Dir> subDir = currentDir.subDir.stream().filter(n -> n.name.equals(pos)).findFirst();
                 subDir.ifPresent(Dir -> currentDir = Dir);
             }
             else if (cmd.startsWith("dir"))
             {
-                final Dir Dir = new Dir(cmd.split(" ")[1]);
+                Dir dir = new Dir(cmd.split(" ")[1]);
+                dir.parent = currentDir;
 
-                Dir.parent = currentDir;
+                currentDir.subDir.add(dir);
 
-                currentDir.subDir.add(Dir);
-                dirs.add(Dir);
+                dirs.add(dir);
             }
             else if (Character.isDigit(cmd.charAt(0)))
             {
-                final String[] data = cmd.split(" ");
-                final Dir n = new Dir(data[1]);
+                String[] data = cmd.split(" ");
 
+                Dir n = new Dir(data[1]);
                 n.parent = currentDir;
-
                 n.size = Integer.parseInt(data[0]);
 
                 currentDir.subDir.add(n);
             }
         }
 
-        final int dirSizes = dirs.stream()
+        int dirSizes = dirs.stream()
                 .mapToInt(Dir::getRecursiveSize)
                 .filter(i -> i < 100_000)
                 .sum();
@@ -73,22 +86,22 @@ public class Day_07
         // Part 1 of the Challenge.
         System.out.println(dirSizes);
 
-        final int totalSize = 70_000_000;
-        final int requiredSize = 30_000_000;
-        final int maxSize = totalSize - requiredSize;
-        final int totalRootSize = root.getRecursiveSize();
-        final int neededSize = totalRootSize - maxSize;
+        int totalSize = 70_000_000;
+        int requiredSize = 30_000_000;
+        int maxSize = totalSize - requiredSize;
+        int totalRootSize = root.getRecursiveSize();
+        int neededSize = totalRootSize - maxSize;
 
-        final Optional<Dir> lNRFD = dirs.stream()
+        Optional<Dir> lNRFD = dirs.stream()
                 .filter(d -> d.getRecursiveSize() > neededSize)
                 .min(Comparator
                         .comparingInt(Dir::getRecursiveSize));
 
         if (lNRFD.isPresent())
         {
-            final Dir del = lNRFD.get();
+            Dir del = lNRFD.get();
 
-            final int delSize = del.getRecursiveSize();
+            int delSize = del.getRecursiveSize();
 
             // Part 2 of the Challenge.
             System.out.println(delSize);
@@ -97,8 +110,8 @@ public class Day_07
 
     static class Dir
     {
-        final List<Dir> subDir = new ArrayList<>();
-        final String name;
+        List<Dir> subDir = new ArrayList<>();
+        String name;
         Dir parent;
         int size;
 

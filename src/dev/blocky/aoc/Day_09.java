@@ -1,3 +1,18 @@
+/**
+ * Copyright 2022-2023 Dominic R. (aka. BlockyDotJar)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package dev.blocky.aoc;
 
 import java.io.File;
@@ -11,24 +26,22 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Day_09
 {
-
     public static void main(String[] args) throws IOException
     {
         int count;
         int endCount;
 
-        final File file = new File("src/rsc/Day_09.txt");
+        File file = new File("src/rsc/Day_09.txt");
 
         try (Stream<String> fileContent = Files.lines(file.toPath(), UTF_8))
         {
-            final HashSet<Position> ch1 = new HashSet<>();
-            final Position po1 = new Position(0, 0), tail = new Position(0, 0);
-
+            HashSet<Position> ch1 = new HashSet<>();
+            Position po1 = new Position(0, 0), tail = new Position(0, 0);
             ch1.add(new Position(0, 0));
 
-            final HashSet<Position> ch2 = new HashSet<>();
-            final Position po2 = new Position(0, 0);
-            final List<Position> positions = new ArrayList<>
+            HashSet<Position> ch2 = new HashSet<>();
+            Position po2 = new Position(0, 0);
+            List<Position> positions = new ArrayList<>
                     (
                             Arrays.asList
                                     (
@@ -38,11 +51,10 @@ public class Day_09
                                     )
                     );
 
-            fileContent.map(l -> Arrays.stream(l.split(" "))
-                            .toList())
+            fileContent.map(l -> Arrays.stream(l.split(" ")).toList())
                     .forEachOrdered(l ->
                     {
-                        final int loop = Integer.parseInt(l.get(1));
+                        int loop = Integer.parseInt(l.get(1));
 
                         for (int i = 0; i < loop; i++)
                         {

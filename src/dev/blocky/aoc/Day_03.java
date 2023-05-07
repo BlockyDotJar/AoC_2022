@@ -1,3 +1,18 @@
+/**
+ * Copyright 2022-2023 Dominic R. (aka. BlockyDotJar)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package dev.blocky.aoc;
 
 import java.io.File;
@@ -10,19 +25,18 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Day_03
 {
-
     public static void main(String[] args) throws IOException
     {
         int count = 0;
         int endCount = 0;
 
-        final File file = new File("src/rsc/Day_03.txt");
-        final List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
+        File file = new File("src/rsc/Day_03.txt");
+        List<String> fileContent = Files.readAllLines(file.toPath(), UTF_8);
 
         for (String line : fileContent)
         {
-            final char[] part1 = line.substring(0, line.length() / 2).toCharArray();
-            final char[] part2 = line.substring(line.length() / 2).toCharArray();
+            char[] part1 = line.substring(0, line.length() / 2).toCharArray();
+            char[] part2 = line.substring(line.length() / 2).toCharArray();
 
             Arrays.sort(part1);
             Arrays.sort(part2);
@@ -52,11 +66,11 @@ public class Day_03
 
         for (int i = 0; i < fileContent.size(); i += 3)
         {
-            final List<String> l = fileContent.subList(i, i + 3);
+            List<String> l = fileContent.subList(i, i + 3);
 
-            final char[] part1 = l.get(0).toCharArray();
-            final char[] part2 = l.get(1).toCharArray();
-            final char[] part3 = l.get(2).toCharArray();
+            char[] part1 = l.get(0).toCharArray();
+            char[] part2 = l.get(1).toCharArray();
+            char[] part3 = l.get(2).toCharArray();
 
             Arrays.sort(part1);
             Arrays.sort(part2);

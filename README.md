@@ -17,10 +17,6 @@ Like I said, this is not the *best* or maybe not even a *good* solution.
 
 <hr>
 
-If I have completed every challenge that I wanted to complete, this project gets archived.
-
-<hr>
-
 **Java Version used:** 17.0.5
 
 | Day - Challenge name          | Part 1 | Part 2 |
