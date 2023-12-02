@@ -1,17 +1,19 @@
 /**
- * Copyright 2022-2023 Dominic R. (aka. BlockyDotJar)
+ * VorteX - General utility program written in Java.
+ * Copyright (C) 2022 BlockyDotJar (aka. Dominic R.)
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 package dev.blocky.aoc;
 
@@ -67,41 +69,41 @@ public class Day_11
 
             switch (sub)
             {
-            case "  St" ->
-            {
-                for (String item : items)
+                case "  St" ->
                 {
-                    long l = Long.parseLong(item);
+                    for (String item : items)
+                    {
+                        long l = Long.parseLong(item);
 
-                    itemL.add(l);
+                        itemL.add(l);
+                    }
                 }
-            }
-            case "  Op" ->
-            {
-                i[0] = items2[4].equals("old") ? 2 : items2[3].equals("+") ? 0 : 1;
-                i[1] = Integer.parseInt(items2[4].equals("old") ? "0" : items2[4]);
-            }
-            case "  Te" -> i[2] = Integer.parseInt(items2[2]);
-            case "    " ->
-            {
-                switch (ifB)
+                case "  Op" ->
                 {
-                case "If t" -> i[3] = Integer.parseInt(items2[3]);
-                case "If f" ->
+                    i[0] = items2[4].equals("old") ? 2 : items2[3].equals("+") ? 0 : 1;
+                    i[1] = Integer.parseInt(items2[4].equals("old") ? "0" : items2[4]);
+                }
+                case "  Te" -> i[2] = Integer.parseInt(items2[2]);
+                case "    " ->
                 {
-                    i[4] = Integer.parseInt(items2[3]);
+                    switch (ifB)
+                    {
+                        case "If t" -> i[3] = Integer.parseInt(items2[3]);
+                        case "If f" ->
+                        {
+                            i[4] = Integer.parseInt(items2[3]);
 
-                    Monkey monkey = new Monkey(itemL, i);
-                    monkeyL.add(monkey);
+                            Monkey monkey = new Monkey(itemL, i);
+                            monkeyL.add(monkey);
 
-                    op *= i[2];
+                            op *= i[2];
 
-                    itemL.clear();
+                            itemL.clear();
 
-                    i = new int[5];
+                            i = new int[5];
+                        }
+                    }
                 }
-                }
-            }
             }
         }
 
@@ -156,41 +158,41 @@ public class Day_11
 
             switch (sub)
             {
-            case "  St" ->
-            {
-                for (String item : items)
+                case "  St" ->
                 {
-                    long l = Long.parseLong(item);
+                    for (String item : items)
+                    {
+                        long l = Long.parseLong(item);
 
-                    itemL.add(l);
+                        itemL.add(l);
+                    }
                 }
-            }
-            case "  Op" ->
-            {
-                i[0] = items2[4].equals("old") ? 2 : items2[3].equals("+") ? 0 : 1;
-                i[1] = Integer.parseInt(items2[4].equals("old") ? "0" : items2[4]);
-            }
-            case "  Te" -> i[2] = Integer.parseInt(items2[2]);
-            case "    " ->
-            {
-                switch (ifB)
+                case "  Op" ->
                 {
-                case "If t" -> i[3] = Integer.parseInt(items2[3]);
-                case "If f" ->
+                    i[0] = items2[4].equals("old") ? 2 : items2[3].equals("+") ? 0 : 1;
+                    i[1] = Integer.parseInt(items2[4].equals("old") ? "0" : items2[4]);
+                }
+                case "  Te" -> i[2] = Integer.parseInt(items2[2]);
+                case "    " ->
                 {
-                    i[4] = Integer.parseInt(items2[3]);
+                    switch (ifB)
+                    {
+                        case "If t" -> i[3] = Integer.parseInt(items2[3]);
+                        case "If f" ->
+                        {
+                            i[4] = Integer.parseInt(items2[3]);
 
-                    Monkey monkey = new Monkey(itemL, i);
-                    monkeyL.add(monkey);
+                            Monkey monkey = new Monkey(itemL, i);
+                            monkeyL.add(monkey);
 
-                    op *= i[2];
+                            op *= i[2];
 
-                    itemL.clear();
+                            itemL.clear();
 
-                    i = new int[5];
+                            i = new int[5];
+                        }
+                    }
                 }
-                }
-            }
             }
         }
 
@@ -239,9 +241,9 @@ public class Day_11
             {
                 switch (i[0])
                 {
-                case 0 -> item += i[1];
-                case 1 -> item *= i[1];
-                case 2 -> item *= item;
+                    case 0 -> item += i[1];
+                    case 1 -> item *= i[1];
+                    case 2 -> item *= item;
                 }
 
                 if (divide)

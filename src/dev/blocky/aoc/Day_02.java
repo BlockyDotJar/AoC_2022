@@ -1,17 +1,19 @@
 /**
- * Copyright 2022-2023 Dominic R. (aka. BlockyDotJar)
+ * VorteX - General utility program written in Java.
+ * Copyright (C) 2022 BlockyDotJar (aka. Dominic R.)
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 package dev.blocky.aoc;
 
@@ -36,51 +38,51 @@ public class Day_02
         {
             switch (line)
             {
-            case "A X" ->
-            {
-                points += 4;
-                endPoints += 3;
-            }
-            case "A Y" ->
-            {
-                points += 8;
-                endPoints += 4;
-            }
-            case "A Z" ->
-            {
-                points += 3;
-                endPoints += 8;
-            }
-            case "B X" ->
-            {
-                points += 1;
-                endPoints += 1;
-            }
-            case "B Y" ->
-            {
-                points += 5;
-                endPoints += 5;
-            }
-            case "B Z" ->
-            {
-                points += 9;
-                endPoints += 9;
-            }
-            case "C X" ->
-            {
-                points += 7;
-                endPoints += 2;
-            }
-            case "C Y" ->
-            {
-                points += 2;
-                endPoints += 6;
-            }
-            case "C Z" ->
-            {
-                points += 6;
-                endPoints += 7;
-            }
+                case "A X" ->
+                {
+                    points += 4;
+                    endPoints += 3;
+                }
+                case "A Y" ->
+                {
+                    points += 8;
+                    endPoints += 4;
+                }
+                case "A Z" ->
+                {
+                    points += 3;
+                    endPoints += 8;
+                }
+                case "B X" ->
+                {
+                    points += 1;
+                    endPoints += 1;
+                }
+                case "B Y" ->
+                {
+                    points += 5;
+                    endPoints += 5;
+                }
+                case "B Z" ->
+                {
+                    points += 9;
+                    endPoints += 9;
+                }
+                case "C X" ->
+                {
+                    points += 7;
+                    endPoints += 2;
+                }
+                case "C Y" ->
+                {
+                    points += 2;
+                    endPoints += 6;
+                }
+                case "C Z" ->
+                {
+                    points += 6;
+                    endPoints += 7;
+                }
             }
         }
 
